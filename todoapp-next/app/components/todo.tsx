@@ -54,17 +54,22 @@ const Todo = () => {
         setTodo(copyTodo);
     }
 
+    // creating function strike text on completed task
     const toggleCompleted = (i: number) => {
         let copyTodo = [...todo];
         copyTodo[i].completed = !copyTodo[i].completed;
         setTodo(copyTodo);
     };
 
+    // creating delete task function
+    const delAll = () => {
+        setTodo([]);
+    }
 
 
     return (
         <>
-            <div className="p-5 h-screen m-auto border-4 border-dark rounded-lg bg-containerColor md:w-1/2 lg:w-1/2">
+            <div className="p-5 h-screen m-auto border-4 min-w-96 border-dark rounded-lg bg-containerColor md:w-1/2 lg:w-1/2">
                 <main>
                     <div>
                         <h1 className="text-center font-bold text-dark text-6xl">TASK List</h1>
@@ -94,12 +99,13 @@ const Todo = () => {
                                         <li className={`text-dark text-2xl cursor-pointer ${item.completed ? "line-through" : ""
                                             }`}
                                             onClick={() => toggleCompleted(index)}>
+                                            {/* render function for delete task */}
                                             {index + 1} - {item.task}
 
                                         </li>
                                     </ul>
                                     <button className="w-8 text-3xl" onClick={() => {
-
+                                        // render function for delete task
                                         delHandler(index);
 
                                     }}>
@@ -115,6 +121,11 @@ const Todo = () => {
                             ))
 
                         )}
+                        <div className="flex justify-center m-3">
+                            <button onClick={()=>{
+                                delAll()
+                            }} className="text-light bg-dark p-2 rounded w-28">Delete all</button>
+                        </div>
 
                     </div>
                 </main>
