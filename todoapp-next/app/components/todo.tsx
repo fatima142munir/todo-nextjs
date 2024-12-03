@@ -69,7 +69,7 @@ const Todo = () => {
 
     return (
         <>
-            <div className="p-5 h-screen m-auto border-4 min-w-96 border-dark rounded-lg bg-containerColor md:w-1/2 lg:w-1/2">
+            <div className="p-5 h-auto m-auto border-8 min-w-96 border-dark rounded-2xl shadow-2xl bg-containerColor md:w-1/2 lg:w-1/2">
                 <main>
                     <div>
                         <h1 className="text-center font-bold text-dark text-6xl">TASK List</h1>
